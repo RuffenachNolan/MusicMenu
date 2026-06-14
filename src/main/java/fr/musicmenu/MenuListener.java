@@ -134,7 +134,7 @@ public class MenuListener implements Listener {
             Player player = (Player) event.getWhoClicked();
             String musicName = meta.getDisplayName().replace("§b", "");
 
-            player.playSound(player.getLocation(), "musique." + musicName, 1.0f, 1.0f);
+            player.playSound(player.getLocation(), ("musique." + musicName).toLowerCase(), 1.0f, 1.0f);
             player.sendMessage("§aLecture : " + musicName);
         }
     }
