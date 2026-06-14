@@ -1,3 +1,4 @@
+package fr.musicmenu;
 package fr.tonplugin.musicmenu;
 
 import org.bukkit.Bukkit;
