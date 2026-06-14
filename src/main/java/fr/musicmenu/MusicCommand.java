@@ -15,7 +15,7 @@ import java.util.List;
 
 public class MusicCommand implements CommandExecutor {
 
-    private final List<String> allowedPlayers = Arrays.asList("Anguile09", "DustMan00");
+    private final List<String> allowedPlayers = Arrays.asList("Anguile09", "DustMan009");
 
     private final List<String> categories = Arrays.asList(
             "Greenwood", "Roseville", "Northmen", "Vieilleville",
