@@ -1,14 +1,17 @@
 package fr.musicmenu;
-package fr.tonplugin.musicmenu;
 
 import org.bukkit.Bukkit;
-import org.bukkit.command.*;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.*;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.Material;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 public class MusicCommand implements CommandExecutor {
 
@@ -23,7 +26,9 @@ public class MusicCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
-        if (!(sender instanceof Player)) return true;
+        if (!(sender instanceof Player)) {
+            return true;
+        }
 
         Player player = (Player) sender;
 
@@ -35,19 +40,23 @@ public class MusicCommand implements CommandExecutor {
         Inventory menu = Bukkit.createInventory(null, 27, "§8Musiques");
 
         int slot = 0;
-        for (String cat : categories) {
-            menu.setItem(slot++, createItem(Material.NOTE_BLOCK, "§a" + cat));
+        for (String category : categories) {
+            menu.setItem(slot++, createItem(Material.NOTE_BLOCK, "§a" + category));
         }
 
         player.openInventory(menu);
         return true;
     }
 
-    private ItemStack createItem(Material mat, String name) {
-        ItemStack item = new ItemStack(mat);
+    private ItemStack createItem(Material material, String name) {
+        ItemStack item = new ItemStack(material);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(name);
-        item.setItemMeta(meta);
+
+        if (meta != null) {
+            meta.setDisplayName(name);
+            item.setItemMeta(meta);
+        }
+
         return item;
     }
 }
