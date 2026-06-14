@@ -1,0 +1,8 @@
+name: MusicMenu
+version: 1.0
+main: fr.musicmenu.MusicMenuPlugin
+api-version: 1.20
+
+commands:
+  musicmenu:
+    description: Ouvre le menu musique
