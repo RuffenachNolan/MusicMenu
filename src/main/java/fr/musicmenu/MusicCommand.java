@@ -19,7 +19,7 @@ public final class MusicCommand implements CommandExecutor {
 
     private static final Set<String> ALLOWED_PLAYERS = Set.of(
             "Anguile09",
-            "DustMan00"
+            "DustMan009"
     );
 
     private static final List<String> CATEGORIES = List.of(
