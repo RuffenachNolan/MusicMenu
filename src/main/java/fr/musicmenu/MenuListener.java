@@ -103,7 +103,8 @@ public final class MenuListener implements Listener {
                 "Melkor_Temple",
                 "Melkor_Boss2",
                 "Melkor_Boss3",
-                "Melkor_Good_Ending",
+                "Melkor_Before_Good_Ending",
+                "Melkor_After_Good_Ending",
                 "Melkor_Bad_Ending"
         ));
     }
